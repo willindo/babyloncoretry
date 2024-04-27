@@ -10,6 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@babylonjs/core": "^7.4.0",
+    "@babylonjs/loaders": "^7.4.0",
+    "@babylonjs/materials": "^7.4.0",
+    "@babylonjs/post-processes": "^7.4.0",
+    "@babylonjs/procedural-textures": "^7.4.0",
+    "@babylonjs/serializers": "^7.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
