@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import * as BABYLON from '@babylonjs/core';
 import '@babylonjs/loaders'; // Don't forget to import the loaders
-// import './water.fragment.fx'
-// import '../water.vertex.fx'
+import '../shaderwave/water.fragment.fx'
+import '../shaderwave/water.vertex.fx'
 import './babyl.css'
 function BabylonScene() {
     const reactCanvas = useRef(null);
