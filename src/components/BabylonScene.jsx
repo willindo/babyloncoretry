@@ -34,10 +34,10 @@ function BabylonScene() {
         shader.setTexture("textureSampler", amigaTexture);
         ground.material = shader;
         
-        BABYLON.SceneLoader.ImportMesh("", "./beer_mug/scene.gltf", "", scene, function (newMeshes) {
-            // This function will be called when the model is loaded
-            scene.createDefaultCameraOrLight(true, true, true);
-        });
+        // BABYLON.SceneLoader.ImportMesh("", "./beer_mug/scene.gltf", "", scene, function (newMeshes) {
+        //     // This function will be called when the model is loaded
+        //     scene.createDefaultCameraOrLight(true, true, true);
+        // });
         engine.runRenderLoop(() => {
             if (scene) {
                 scene.render();

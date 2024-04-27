@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import * as BABYLON from '@babylonjs/core';
-import { SceneLoader } from '@babylonjs/core';
+// import  '@babylonejs/loaders'
 const Waterpool = () => {
   const canvasRef = useRef(null);
 
@@ -51,8 +51,7 @@ const Waterpool = () => {
         const meshes = {};
         async function loadMeshes() {
             // load pool asset which is three meshes separated to help cull unneeded meshes from render target texture
-
-            meshes.poolAsset = await BABYLON.SceneLoader.AppendAsync("./public", "pool.glb", scene);
+            meshes.poolAsset = await BABYLON.SceneLoader.AppendAsync("", "./pool.glb", scene);
             meshes.pool = scene.getMeshByName("pool_low");
             meshes.groundTiles = scene.getMeshByName("groundTiles_low");
             meshes.ground = scene.getMeshByName("ground_low");
