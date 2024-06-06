@@ -56,11 +56,11 @@ const Shapes = ({ showBumpSphere }) => {
     </>
   )
 }
-/**
- * official examples
- * - https://www.babylonjs-playground.com/#YDO1F#75
- * - https://www.babylonjs-playground.com/#20OAV9#15
- */
+//  * official examples
+// /**
+//  * - https://www.babylonjs-playground.com/#YDO1F#75
+//  * - https://www.babylonjs-playground.com/#20OAV9#15
+//  */
 const Textures = () => {
   const [showBumpSphere, setShowBumpSphere] = useState(true)
   const toggleShowBumpSphere = () => {

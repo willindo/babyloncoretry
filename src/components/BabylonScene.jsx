@@ -1,61 +1,40 @@
 import React, { useEffect, useRef } from 'react';
 import * as BABYLON from '@babylonjs/core';
 import '@babylonjs/loaders'; // Don't forget to import the loaders
-import '../shaderwave/water.fragment.fx'
-import '../shaderwave/water.vertex.fx'
-import './babyl.css'
+import { WaterMaterial,GridMaterial } from '@babylonjs/materials';
+// import './babyl.css'
 function BabylonScene() {
-    const reactCanvas = useRef(null);
-
+    const canvasRef = useRef(null);
     useEffect(() => {
-        const engine = new BABYLON.Engine(reactCanvas.current);
-        const scene = new BABYLON.Scene(engine);
-
-        const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 3, new BABYLON.Vector3(0, 0, 0), scene);
-        camera.attachControl(reactCanvas.current, true);
-
-        const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0), scene);
-        var ground = BABYLON.MeshBuilder.CreateGround("ground", { width: 512, height: 512, subdivisions: 32 }, scene);
-
-        // var plane = BABYLON.MeshBuilder.CreatePlane("plane", {});
-
-        var shader = new BABYLON.ShaderMaterial(
-            "shader", 
-            scene, 
-            "./water", 
-            {
-                attributes: ["position", "uv"],
-                uniforms: ["worldViewProjection"],
-                samplers: ["textureSampler"],
-            }
-        );
+        if (canvasRef.current) {
+            const engine = new BABYLON.Engine(canvasRef.current);
+            const scene = new BABYLON.Scene(engine);
+            const camera = new BABYLON.ArcRotateCamera("ArcRotateCamera", -Math.PI / 2, Math.PI / 2.2, 10, new BABYLON.Vector3(0, 0, 0), scene);
+            camera.attachControl(canvasRef.current, true);
+            const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0), scene);
         
-        const amigaTexture = new BABYLON.Texture("./crate.png", scene);
-        shader.setTexture("textureSampler", amigaTexture);
-        ground.material = shader;
+            // Ground for positional reference
+            const ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 25, height: 25});
+            ground.material = new GridMaterial("groundMat");
+            ground.material.backFaceCulling = false;
         
-        // BABYLON.SceneLoader.ImportMesh("", "./beer_mug/scene.gltf", "", scene, function (newMeshes) {
-        //     // This function will be called when the model is loaded
-        //     scene.createDefaultCameraOrLight(true, true, true);
-        // });
-        engine.runRenderLoop(() => {
-            if (scene) {
+            BABYLON.ParticleHelper.CreateDefault(new BABYLON.Vector3(0, 0.5, 0)).start();
+        
+          
+            engine.runRenderLoop(() => {
                 scene.render();
-            }
-        });
+            });
 
-        return () => {
-            if (scene) {
+            return () => {
                 scene.dispose();
-            }
-            if (engine) {
                 engine.dispose();
             }
-        };
+        }
     }, []);
 
+
     return (
-        <canvas ref={reactCanvas} />
+        <canvas ref={canvasRef} />
     );
 }
 
