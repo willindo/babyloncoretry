@@ -6,7 +6,7 @@ import {
   usePrevNextButtons
 } from './EmblaCAB'
 import { DotButton, useDotButton } from './EmblaCDB'
-
+import './Embla.css'
 const TWEEN_FACTOR_BASE = 0.52
 
 const numberWithinRange = (number, min, max) =>
@@ -104,7 +104,7 @@ const EmblaCarousel = (props) => {
       </div>
 
       <div className="embla__controls">
-        <div className="embla__buttons">
+        <div className=" but ">
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
         </div>

@@ -1,4 +1,4 @@
-import React, { useCallback, useLayoutEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import AutoScroll from 'embla-carousel-auto-scroll'
 import {
@@ -10,16 +10,16 @@ import {
 const EmblaCarousel3 = (props) => {
   const { slides, options } = props
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
-    AutoScroll()
+    AutoScroll({stopOnInteraction: true})
   ])
   const [isPlaying, setIsPlaying] = useState(false)
 
-  const {
-    prevBtnDisabled,
-    nextBtnDisabled,
-    onPrevButtonClick,
-    onNextButtonClick
-  } = usePrevNextButtons(emblaApi)
+  // const {
+  //   prevBtnDisabled,
+  //   nextBtnDisabled,
+  //   onPrevButtonClick,
+  //   onNextButtonClick
+  // } = usePrevNextButtons(emblaApi)
 
   // const onButtonAutoplayClick = useCallback(
   //   (callback) => {
@@ -37,33 +37,33 @@ const EmblaCarousel3 = (props) => {
   //   [emblaApi]
   // )
 
-  const toggleAutoplay = useCallback(() => {
-    const autoScroll = emblaApi?.plugins()?.autoScroll
-    if (!autoScroll) return
+  // const toggleAutoplay = useCallback(() => {
+  //   const autoScroll = emblaApi?.plugins()?.autoScroll
+  //   if (!autoScroll) return
 
-    const playOrStop = autoScroll.isPlaying()
-      ? autoScroll.stop
-      : autoScroll.play
-    playOrStop()
-  }, [emblaApi])
+  //   const playOrStop = autoScroll.isPlaying()`
+  //     ? autoScroll.stop
+  //     : autoScroll.play
+  //   playOrStop()
+  // }, [emblaApi])
 
-  useLayoutEffect(() => {
-    const autoScroll = emblaApi?.plugins()?.autoScroll
-    if (!autoScroll) return
+  // useEffect(() => {
+  //   const autoScroll = emblaApi?.plugins()?.autoScroll
+  //   if (!autoScroll) return
 
-    setIsPlaying(autoScroll.isPlaying())
-    emblaApi
-      .on('autoScroll:play', () => setIsPlaying(true))
-      .on('autoScroll:stop', () => setIsPlaying(false))
-      .on('reInit', () => setIsPlaying(autoScroll.isPlaying()))
-  }, [emblaApi])
+  //   setIsPlaying(autoScroll.isPlaying())
+  //   emblaApi
+  //     .on('autoScroll:play', () => setIsPlaying(true))
+  //     .on('autoScroll:stop', () => setIsPlaying(false))
+  //     .on('reInit', () => setIsPlaying(autoScroll.isPlaying()))
+  // }, [emblaApi])
 
   return (
     <div className="embla em1">
       <div className=" vp1" ref={emblaRef}>
-        <div className="embla__container cntnr1">
+        <div className=" cntnr1">
           {slides.map((item,index) => (
-            <div className="embla__slide sld1" key={index}>
+            <div className=" sld1" key={index}>
               <div className=" sldnm1">
                 <span>{item}</span>
               </div>

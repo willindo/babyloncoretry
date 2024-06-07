@@ -6,7 +6,7 @@ import {
   usePrevNextButtons
 } from './EmblaCAB'
 import useEmblaCarousel from 'embla-carousel-react'
-
+import'./Embla2.css'
 const EmblaCarousel = (props) => {
   const { slides, options } = props
   const [emblaRef, emblaApi] = useEmblaCarousel(options)
@@ -33,13 +33,12 @@ const EmblaCarousel = (props) => {
         </div>
       </div>
 
-      <div className="embla__controls cntr">
-        <div className="embla__buttons bt">
+      <div className=" cntr">
+        <div className=" bts">
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
         </div>
-
-        <div className="embla__dots dts">
+        <div className=" dts">
           {scrollSnaps.map((_, index) => (
             <DotButton
               key={index}
