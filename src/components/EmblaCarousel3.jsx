@@ -10,7 +10,7 @@ import {
 const EmblaCarousel3 = (props) => {
   const { slides, options } = props
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
-    AutoScroll({stopOnInteraction: true})
+    AutoScroll({stopOnInteraction: false})
   ])
   const [isPlaying, setIsPlaying] = useState(false)
 
