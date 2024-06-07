@@ -28,7 +28,7 @@ function App() {
     // const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
     const SLIDES = [<Water1/>,<Water2/>,<Water3/>,<Water4/>,<Waterpool/>]
     const SLIDES1 = [<BabylonScene/>,<Shad/>,<Particle/>,<Tryshader/>,]
-    const SLIDES2 = ['Next.js','React','Tailwind css','GSAP','Three.js','R3Fibre','Babylon.js','Sass']
+    const SLIDES2 = ['Next.js','React', 'Express.js','Mongodb','Tailwind css','GSAP','Three.js','R3Fibre','Babylon.js','Sass']
   return (
     <>
 <EmblaCarousel slides={SLIDES} options={OPTIONS} />
