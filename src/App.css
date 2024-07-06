@@ -1,7 +1,14 @@
-.big{
+.big {
   display: flex;
   width: 100vw;
   background-color: #783333;
   height: 70vh;
   flex-direction: column;
+}
+
+.ab {
+  height: 50px;
+  aspect-ratio: 4/7;
+  /* width: 100px; */
+  background-color: #18afc0;
 }

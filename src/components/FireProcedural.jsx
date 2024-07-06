@@ -1,23 +1,23 @@
-import { Vector3 } from '@babylonjs/core/Maths/math.vector'
-import {  FireProceduralTexture } from '@babylonjs/procedural-textures'
-import React, { useCallback } from 'react'
-import { Engine, Scene, useScene } from 'react-babylonjs'
+import { Vector3 } from "@babylonjs/core/Maths/math.vector";
+import { FireProceduralTexture } from "@babylonjs/procedural-textures";
+import React, { useCallback } from "react";
+import { Engine, Scene, useScene } from "react-babylonjs";
 const FireballPlane = () => {
-  const scene = useScene()
+  const scene = useScene();
   const ref = useCallback((node) => {
     if (node !== null) {
-      const fireTexture = new FireProceduralTexture('', 256, scene)
-      const fireMaterial = node
-      fireMaterial.diffuseTexture = fireTexture
-      fireMaterial.opacityTexture = fireTexture
+      const fireTexture = new FireProceduralTexture("", 256, scene);
+      const fireMaterial = node;
+      fireMaterial.diffuseTexture = fireTexture;
+      fireMaterial.opacityTexture = fireTexture;
     }
-  }, [])
+  }, []);
   return (
     <plane name="fireball" size={20}>
       <standardMaterial ref={ref} name="fireball-material" />
     </plane>
-  )
-}
+  );
+};
 /**
  * Insipration Playground: https://www.babylonjs-playground.com/#KM3TC
  */
@@ -40,11 +40,11 @@ function WithFireProcedural() {
         <FireballPlane />
       </Scene>
     </Engine>
-  )
+  );
 }
 const FireProcedural = () => (
-  <div style={{ flex: 1, display: 'flex' }}>
+  <div style={{ flex: 1, display: "flex" }}>
     <WithFireProcedural />
   </div>
-)
-export default FireProcedural
+);
+export default FireProcedural;

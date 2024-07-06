@@ -1,18 +1,18 @@
-import React, { useCallback, useEffect, useState } from 'react'
-import useEmblaCarousel from 'embla-carousel-react'
-import AutoScroll from 'embla-carousel-auto-scroll'
+import React, { useCallback, useEffect, useState } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import AutoScroll from "embla-carousel-auto-scroll";
 import {
   NextButton,
   PrevButton,
-  usePrevNextButtons
-} from './EmblaCarouselArrowButton'
+  usePrevNextButtons,
+} from "./EmblaCarouselArrowButton";
 
 const EmblaCarousel3 = (props) => {
-  const { slides, options } = props
+  const { slides, options } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
-    AutoScroll({stopOnInteraction: false})
-  ])
-  const [isPlaying, setIsPlaying] = useState(false)
+    AutoScroll({ stopOnInteraction: false }),
+  ]);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   // const {
   //   prevBtnDisabled,
@@ -62,7 +62,7 @@ const EmblaCarousel3 = (props) => {
     <div className="embla em1">
       <div className=" vp1" ref={emblaRef}>
         <div className=" cntnr1">
-          {slides.map((item,index) => (
+          {slides.map((item, index) => (
             <div className=" sld1" key={index}>
               <div className=" sldnm1">
                 <span>{item}</span>
@@ -71,9 +71,8 @@ const EmblaCarousel3 = (props) => {
           ))}
         </div>
       </div>
-
     </div>
-  )
-}
+  );
+};
 
-export default EmblaCarousel3
+export default EmblaCarousel3;
