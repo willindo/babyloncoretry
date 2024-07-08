@@ -11,7 +11,7 @@ const NavigationMenu2 = () => {
       <NavigationMenu.List className="NavigationMenuList">
         <NavigationMenu.Item>
           <NavigationMenu.Trigger className="NavigationMenuTrigger">
-            Learn <CaretDownIcon className="CaretDown" aria-hidden />
+            Some <CaretDownIcon className="CaretDown" aria-hidden />
           </NavigationMenu.Trigger>
           <NavigationMenu.Content className="NavigationMenuContent">
             <ul className="List one">
@@ -38,10 +38,10 @@ const NavigationMenu2 = () => {
               </li>
 
               <ListItem href="/emblacarousel" title="EmblaCarousel">
-                CSS-in-JS with best-in-class developer experience.
+                carousel exprience
               </ListItem>
               <ListItem href="/emblacarousel2" title="Carousel2">
-                Beautiful, thought-out palettes with auto dark mode.
+                auto moving some tech snap shot
               </ListItem>
               <ListItem href="https://icons.radix-ui.com/" title="Icons">
                 A crisp set of 15x15 icons, balanced and consistent.
@@ -52,7 +52,7 @@ const NavigationMenu2 = () => {
 
         <NavigationMenu.Item>
           <NavigationMenu.Trigger className="NavigationMenuTrigger">
-            Overview <CaretDownIcon className="CaretDown" aria-hidden />
+            Samples <CaretDownIcon className="CaretDown" aria-hidden />
           </NavigationMenu.Trigger>
           <NavigationMenu.Content className="NavigationMenuContent">
             <ul className="List two">
@@ -60,39 +60,38 @@ const NavigationMenu2 = () => {
                 <Link className="NavigationMenuLink" to="tryshader">
                   Yellow Particle
                 </Link>
-                Build high-quality, accessible design systems and web apps.
+                one experiment yellow color particles
               </ListItem>
               <ListItem>
                 <Link className="NavigationMenuLink" to="/particles1">
                   Particles 1
                 </Link>
-                A quick tutorial to get you up and running with Radix
-                Primitives.
+                another particle renderin Primitives.
               </ListItem>
               <ListItem>
                 <Link className="NavigationMenuLink" to="/terraz">
                   Terraz
                 </Link>
-                Unstyled and compatible with any styling solution.
+                background and reflection react 3 fiber
               </ListItem>
               <ListItem>
                 <Link className="NavigationMenuLink" to="/waterpool">
                   Waterpool
                 </Link>
-                Use CSS keyframes or any animation library of your choice.
+                babylon import glb pool
               </ListItem>
               <ListItem>
                 <Link className="NavigationMenuLink" to="/waving">
                   Instanced Meshes
                 </Link>
-                Tested in a range of browsers and assistive technologies.
+                instanced a lot of with glowing effect
               </ListItem>
               <ListItem>
                 {/* <NavigationMenu.Link>Sectionpin</NavigationMenu.Link> */}
                 <Link className="NavigationMenuLink" to="/mix">
                   Mix
                 </Link>
-                Radix Primitives releases and their changelogs.
+                some effects along with particle and fire
               </ListItem>
             </ul>
           </NavigationMenu.Content>
@@ -101,7 +100,7 @@ const NavigationMenu2 = () => {
         <NavigationMenu.Item>
           {/* <NavigationMenu.Link className="NavigationMenuLink" href="/horizontal"> */}
           <Link className="NavigationMenuLink" to="/horizontal">
-            HORIZONTAL
+            LINKS DOWN
           </Link>
           {/* </NavigationMenu.Link> */}
         </NavigationMenu.Item>

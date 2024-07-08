@@ -5,6 +5,7 @@ import ReactFlow, {
   Panel,
   useNodesState,
   useEdgesState,
+  Background,
 } from "reactflow";
 import dagre from "dagre";
 
@@ -82,7 +83,7 @@ const Flownode = () => {
   );
 
   return (
-    <div style={{ width: "30vw", height: "30vh" }}>
+    <div style={{ width: "30vw", height: "30vh", margin: "auto" }}>
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -96,6 +97,7 @@ const Flownode = () => {
           <button onClick={() => onLayout("TB")}>vertical layout</button>
           <button onClick={() => onLayout("LR")}>horizontal layout</button>
         </Panel>
+        <Background color="teal" variant="dots" gap={12} size={1.5} />
       </ReactFlow>
     </div>
   );

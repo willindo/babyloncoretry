@@ -46,7 +46,7 @@ export const Waving = () => (
       </mesh>
       <Swarm count={2000} />
       <Environment preset="lobby" />
-      {/* <Postpro /> */}
+      <Postpro />
       <OrbitControls />
     </Canvas>
   </div>
@@ -125,8 +125,8 @@ function Postpro() {
   return (
     <Effects disableGamma>
       <waterPass ref={water} factor={1} />
-      <unrealBloomPass args={[undefined, 1.25, 1, 0]} />
-      <filmPass args={[0.2, 0.5, 1500, false]} />
+      {/* <unrealBloomPass args={[undefined, 1.25, 1, 0]} /> */}
+      {/* <filmPass args={[0.2, 0.5, 1500, false]} /> */}
       {/* <lUTPass lut={data.texture} intensity={0.75} /> */}
     </Effects>
   );

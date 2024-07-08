@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { useRef, useMemo, useLayoutEffect } from "react";
+import React, { useRef, useMemo, useLayoutEffect } from "react";
 import { Canvas, extend } from "@react-three/fiber";
 import { shaderMaterial, CameraControls } from "@react-three/drei";
 import niceColors from "nice-color-palettes";

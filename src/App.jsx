@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -10,8 +10,10 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+gsap.registerPlugin(useGSAP);
 import { Canvas } from "@react-three/fiber";
-import "./components/Embla3.css";
+// import "./components/Embla3.css";
 import Particle from "./components/Particle";
 import Tryshader from "./components/Tryshader";
 import Waterpool from "./components/Waterpool";
@@ -21,9 +23,9 @@ import Water2 from "./components/Water2";
 import Water3 from "./components/Water3";
 import Water4 from "./components/Water4";
 import BabylonScene from "./components/BabylonScene";
-import EmblaCarousel from "./components/EmblaCarousel";
-import EmblaCarousel2 from "./components/EmblaCarousel2";
-import EmblaCarousel3 from "./components/EmblaCarousel3";
+// import EmblaCarousel from "./components/EmblaCarousel";
+// import EmblaCarousel2 from "./components/EmblaCarousel2";
+// import EmblaCarousel3 from "./components/EmblaCarousel3";
 import Connected from "./components/Connected";
 import { Waving } from "./components/Waving";
 import Instaced from "./components/Instaced";
@@ -34,6 +36,7 @@ import Dragnode from "./components/Dragnode";
 import Flowdrag from "./components/Flowdrag";
 
 import NavigationMenu2 from "./components/NavigationMenu";
+import Head from "./components/Head";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -77,7 +80,7 @@ function Layout() {
       <nav className="laynav">
         <ul className="nav1">
           <li>
-            <Link to="/">Animation Skew</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="/water1">Water 1</Link>
@@ -93,11 +96,16 @@ function Layout() {
           </li>
         </ul>
       </nav>
+      <Head />
+      <h1 className="head">
+        <span> 3d </span>enabled
+      </h1>
       <Outlet />
     </>
   );
 }
 export function Home() {
+  const blink = useRef();
   const SLIDES = [
     <Water1 />,
     <Water2 />,
@@ -118,6 +126,26 @@ export function Home() {
     "Babylon.js",
     "Sass",
   ];
+  // useEffect(() => {
+  //   const tl1 = gsap.timeline();
+  //   // return tl1.revert();
+  // }, []);
+  useGSAP(
+    () => {
+      // gsap code here...
+      gsap.to(
+        ".pointer",
+        // { borderColor: "yellow", repeat: -1, duration: 3, yoyo: true },
+        {
+          opacity: 0,
+          repeat: -1,
+          duration: 3,
+          yoyoEase: true,
+        }
+      );
+    },
+    { scope: blink }
+  );
   return (
     <>
       {/* <div> */}
@@ -126,16 +154,31 @@ export function Home() {
       <div className="ab"></div>
       <Connected />
       <Instaced /> */}
-      {/* <Waving /> */}
-      <Flownode />
 
       {/* <Flowdrag />; */}
       {/* <Dragnode /> */}
-      {/* <Terraz /> */}
       {/* <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
         <Particles />
-      </Canvas> */}
-      <NavigationMenu2 />
+        </Canvas> */}
+      <div className="cover">
+        <div className="note">
+          <p>
+            This website features a diverse collection of 3D-enabled pages.
+            However, I acknowledge that the organizing must be improved. You
+            might encounter some links here that are not well-organized due to
+            the busy workload. I appreciate your understanding as we work on
+            refining the design patterns and creating a more organized
+            experience{" "}
+          </p>
+        </div>
+        <div ref={blink}>
+          <h3 className="pointer">there are links below, explore them</h3>
+          <NavigationMenu2 />
+        </div>
+        <div>
+          <Flownode />
+        </div>
+      </div>
       {/* </div> */}
     </>
   );

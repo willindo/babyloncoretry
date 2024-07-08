@@ -11,17 +11,18 @@ p {
 }
 
 .NavigationMenuRoot {
+  min-width: 30vw;
   position: relative;
   display: flex;
   justify-content: center;
-  width: 100vw;
+  /* width: 100vw; */
   z-index: 1;
 }
 
 .NavigationMenuList {
   display: flex;
   justify-content: center;
-  background-color: white;
+  background-color: rgb(221, 238, 237);
   padding: 4px;
   border-radius: 6px;
   list-style: none;
@@ -63,7 +64,7 @@ p {
   text-decoration: none;
   font-size: 1em;
   line-height: 1;
-  margin: 10px 0px 0px;
+  /* margin: 10px 0px 0px; */
 }
 
 .NavigationMenuContent {
@@ -74,6 +75,7 @@ p {
   animation-duration: 250ms;
   animation-timing-function: ease;
   z-index: 1;
+  background-color: #ecddf4;
 }
 
 .NavigationMenuContent[data-motion='from-start'] {
