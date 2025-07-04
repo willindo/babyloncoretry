@@ -55,7 +55,7 @@ function Water1() {
         scene
       );
       groundMaterial.diffuseTexture = new BABYLON.Texture(
-        "../reflectivity.png",
+        "../dog1.png",
         scene
       );
       groundMaterial.diffuseTexture.uScale =
