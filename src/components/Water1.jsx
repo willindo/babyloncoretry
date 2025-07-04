@@ -83,7 +83,7 @@ function Water1() {
       );
 
       var water = new WaterMaterial("water", scene);
-      water.bumpTexture = new BABYLON.Texture("../waterbump.png", scene);
+      water.bumpTexture = new BABYLON.Texture("../dog1.png", scene);
 
       // Water properties
       water.windForce = -15;
